@@ -34,7 +34,7 @@ namespace database__11._6._24
         public allTests()
         {
             SqlConnection DBConnection = new SqlConnection(Database.Connection);
-            string getStudentsSQL = "select * from student";
+            string getStudentsSQL = "select * from Test";
             DBConnection.Open();
             SqlDataAdapter da = new SqlDataAdapter(getStudentsSQL, DBConnection);
             DataTable Results = new DataTable();
@@ -54,7 +54,7 @@ namespace database__11._6._24
         public allResults()
         {
             SqlConnection DBConnection = new SqlConnection(Database.Connection);
-            string getStudentsSQL = "select * from student";
+            string getStudentsSQL = "select * from TestResults";
             DBConnection.Open();
             SqlDataAdapter da = new SqlDataAdapter(getStudentsSQL, DBConnection);
             DataTable Results = new DataTable();
@@ -72,6 +72,10 @@ namespace database__11._6._24
     class Database
     {
         public static string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\Visual studio stuff\database  11.6.24\database  11.6.24\StudentTests1.mdf"";Integrated Security=True";
+        public static allStudents TheStudents = new allStudents();
+        public static allResults Results = new allResults();
+        public static allTests Tests = new allTests();
+
     }
 
         
